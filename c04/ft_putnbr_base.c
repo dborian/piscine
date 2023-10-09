@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <unistd.h>
 
 void	ft_putchar(char c)
@@ -12,9 +11,7 @@ int	ft_strlen(char *str)
 
 	i = 0;
 	while(str[i] != '\0')
-	{
 		i++;
-	}
 	return(i);
 }
 
@@ -63,5 +60,19 @@ void	ft_putnbr_base(int nbr, char *base)
 }
 int	main(void)
 {
-	ft_putnbr_base(-123,"0abc456-89");
+	ft_putnbr_base(40, "0123456789abcdef");
+	ft_putchar('\n');
+	ft_putnbr_base(31, "0123456789abcdef");
+	ft_putchar('\n');
+	ft_putnbr_base(15, "01");
+	ft_putchar('\n');
+	ft_putnbr_base(-15, "0123456789");
+	ft_putchar('\n');
+	ft_putnbr_base(-16, "01");
+	ft_putchar('\n');
+	ft_putnbr_base(2147483647, "0123456789abcdef");
+	ft_putchar('\n');
+	ft_putnbr_base(-2147483648, "0123456789abcdef");
+	ft_putchar('\n');
+	return(0);
 }
