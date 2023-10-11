@@ -41,9 +41,11 @@ int	ft_same(char *str)
 void	ft_putnbr_base(int nbr, char *base)
 {
 	long nb;
+	int len;
 
 	nb = nbr;
-	if(ft_strlen(base) > 1)
+	len = ft_strlen(base);
+	if(len > 1)
 	{
 		if(ft_same(base) == 0)
 		{
@@ -52,27 +54,37 @@ void	ft_putnbr_base(int nbr, char *base)
 				nb = nb * -1;
 				ft_putchar('-');
 			}
-			if(nb > 9)
-				ft_putnbr_base(nb/10,base);
-			ft_putchar(base[nb%10]);
+			if(nb >= len)
+				ft_putnbr_base(nb/len,base);
+			ft_putchar(base[nb%len]);
 		}	
 	}
 }
+
 int	main(void)
 {
-	ft_putnbr_base(40, "0123456789abcdef");
-	ft_putchar('\n');
-	ft_putnbr_base(31, "0123456789abcdef");
-	ft_putchar('\n');
-	ft_putnbr_base(15, "01");
-	ft_putchar('\n');
-	ft_putnbr_base(-15, "0123456789");
-	ft_putchar('\n');
-	ft_putnbr_base(-16, "01");
-	ft_putchar('\n');
 	ft_putnbr_base(2147483647, "0123456789abcdef");
 	ft_putchar('\n');
 	ft_putnbr_base(-2147483648, "0123456789abcdef");
 	ft_putchar('\n');
+	ft_putnbr_base(40, "0123456789abcdef");
+	ft_putchar('\n');
+//	$expected = "28";
+	ft_putnbr_base(31, "0123456789abcdef");
+	ft_putchar('\n');
+//	$expected = "1f";
+	ft_putnbr_base(15, "01");
+	ft_putchar('\n');
+//	$expected = '1111';
+	ft_putnbr_base(-15, "0123456789");
+	ft_putchar('\n');
+	ft_putnbr_base(-16, "01");
+	ft_putchar('\n');
+//	$expected = '-15-10000';
+	ft_putnbr_base(2147483647, "0123456789abcdef");
+	ft_putchar('\n');
+	ft_putnbr_base(-2147483648, "0123456789abcdef");
+	ft_putchar('\n');
+//	$expected = '7fffffff-80000000';
 	return(0);
 }
