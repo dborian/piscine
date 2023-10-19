@@ -1,10 +1,6 @@
 #include <stdio.h>
 #include <unistd.h>
-
-void	ft_putchar(char c)
-{
-	write(1,&c,1);
-}
+// c bon
 int	ft_find(char *str, char f)
 {
 	int i;
@@ -21,6 +17,7 @@ int	ft_find(char *str, char f)
 	return(c);
 }
 
+// c bon
 int	ft_strlen(char *str)
 {
 	int i;
@@ -33,6 +30,7 @@ int	ft_strlen(char *str)
 	return(i);
 }
 
+// c bon
 int	ft_same(char *str)
 {
 	int i;
@@ -56,7 +54,8 @@ int	ft_same(char *str)
 	return(0);
 }
 
-long	ft_charintoint(char *str)
+// c bon
+long	ft_chartoint(char *str)
 {
 	int i;
 	long r;
@@ -78,47 +77,50 @@ long	ft_charintoint(char *str)
 	return(r);
 }
 
-void	ft_recursive(int nb, int len, char *base)
-{
-	if(nb >= len)
-		ft_recursive(nb/len, len, base);
-	ft_putchar(base[nb%len]);
-}
 int	ft_atoi_base(char *str, char *base)
 {
-	long nb;
+	long r;
+	int st; 
 	int len;
 
-	nb = ft_charintoint(str);
+	r = 0;
+	st = ft_chartoint(str);
 	len = ft_strlen(base);
-	if(len > 1)
+	if(ft_strlen(base) > 1)
 	{
 		if(ft_same(base) == 0)
 		{
-			if(ft_find(str, '-') <= ft_find(str, '+'))
-				ft_putchar('+');
-			else
-				ft_putchar('-');
-
-			ft_recursive(nb, len, base);
+			while(st >= len)
+			{
+				r = r + base[st % len] * 10;
+				st = st/len
+			}
+			i++;
+			if(r > 2147483646)
+				return(0);
+			//return un char ?
 		}
 	}
+	return(r);
 }
 int	main(void)
 {
-	ft_atoi_base("  -+-+-40", "0123456789abcdef");
-	ft_putchar('\n');
-	ft_atoi_base("  --++--31", "0123456789abcdef");
-	ft_putchar('\n');
-	ft_atoi_base(" ++--++15", "01");
-	ft_putchar('\n');
-	ft_atoi_base("  ++--+15", "0123456789");
-	ft_putchar('\n');
-	ft_atoi_base("  --++-16", "01");
-	ft_putchar('\n');
-	ft_atoi_base(" -2147483647", "0123456789abcdef");
-	ft_putchar('\n');
-	ft_atoi_base("  +2147483648", "0123456789abcdef");
-	ft_putchar('\n');
-	return(0);
+	printf("test de mes fonction : \nft_find : %d \nexpected : 9 \nft_strlen : %d \nexpected : 11 \nft_same valide : %d = 0 \nft_same non-valide %d = 1 \nft_chartoint %ld \nexpected : 0123456789\n", ft_find("azaearatayauaiaoap", 'a'), ft_strlen("azertyuiopq"), ft_same("ab"), ft_same("aa"), ft_chartoint(" sgdgs0123456789sdfse++--"));
+	printf("avant\n\n");
+	printf("expected 28\n");
+	printf("test1 : %d\n\n", ft_atoi_base("  -+-+-40", "0123456789abcdef"));
+	printf("expected 1f\n");
+	printf("test2 : %d\n\n", ft_atoi_base("  --++--31", "0123456789abcdef"));
+	printf("expected 1111\n");
+	printf("test3 : %d\n\n", ft_atoi_base(" ++--++15", "01"));
+	printf("expected 15\n");
+	printf("test4 : %d\n\n", ft_atoi_base("  ++--+15", "0123456789"));
+	printf("expected 10000\n");
+	printf("test5 : %d\n\n", ft_atoi_base("  --++-16", "01"));
+	printf("expected 7fffffff\n");
+	printf("test6 : %d\n\n", ft_atoi_base(" -2147483647", "0123456789abcdef"));
+	printf("expected 80000000\n");
+	printf("test7 : %d\n\n", ft_atoi_base("  +2147483648", "0123456789abcdef"));
+	printf("aprés\n"); 
+		return(0);
 }
