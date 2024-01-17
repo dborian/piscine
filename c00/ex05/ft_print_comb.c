@@ -29,8 +29,8 @@ void ft_print_comb(void)
 	int u;
 
 	c = '0'-1;
-	d = '0'
-	u = '1'
+	d = '0';
+	u = '1';
 	while(c < '7')
 	{
 		d = c + 1;
