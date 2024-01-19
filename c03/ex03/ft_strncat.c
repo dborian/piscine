@@ -36,8 +36,8 @@ int	main(void)
 	char dest[20] = "salut";
 	char src1[20] = "ation";
 	char dest1[20] = "salut";
-	printf("strcat: %s\n", ft_strncat(dest,src,b));
-	printf("strcat: %s\n", strncat(dest1,src1,b));
+	printf("ft_strncat: %s\n", ft_strncat(dest,src,b));
+	printf("strncat: %s\n", strncat(dest1,src1,b));
 	return(0);
 }
 

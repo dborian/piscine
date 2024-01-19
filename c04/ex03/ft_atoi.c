@@ -53,9 +53,9 @@ int	ft_atoi(char *str)
 
 int 	main(void)
 {
-	printf("atoi = %d\n", ft_atoi(" 2147483648"));	
-	printf("atoi = %d\n", ft_atoi(" - 2147483649"));	
-	printf("atoi = %d\n", atoi(" 2147483648"));	
+	printf("ft_atoi = %d\n", ft_atoi(" 2147483648"));	
+	printf("atoi = %d\n\n", atoi(" 2147483648"));	
+	printf("ft_atoi = %d\n", ft_atoi(" - 2147483649"));	
 	printf("atoi = %d\n", atoi(" - 2147483649"));	
 	return(0);
 }

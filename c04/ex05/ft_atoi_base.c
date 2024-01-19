@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <unistd.h>
-// c bon
+
 int	ft_find(char *str, char f)
 {
 	int i;
@@ -17,7 +17,6 @@ int	ft_find(char *str, char f)
 	return(c);
 }
 
-// c bon
 int	ft_strlen(char *str)
 {
 	int i;
@@ -30,7 +29,6 @@ int	ft_strlen(char *str)
 	return(i);
 }
 
-// c bon
 int	ft_same(char *str)
 {
 	int i;
@@ -54,7 +52,6 @@ int	ft_same(char *str)
 	return(0);
 }
 
-// c bon
 long	ft_chartoint(char *str)
 {
 	int i;
@@ -93,9 +90,8 @@ int	ft_atoi_base(char *str, char *base)
 			while(st >= len)
 			{
 				r = r + base[st % len] * 10;
-				st = st/len
+				st = st/len;
 			}
-			i++;
 			if(r > 2147483646)
 				return(0);
 			//return un char ?

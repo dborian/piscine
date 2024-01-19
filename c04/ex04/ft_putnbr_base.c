@@ -1,4 +1,5 @@
 #include <unistd.h>
+#include <stdio.h>
 
 void	ft_putchar(char c)
 {
@@ -63,28 +64,19 @@ void	ft_putnbr_base(int nbr, char *base)
 
 int	main(void)
 {
-	ft_putnbr_base(2147483647, "0123456789abcdef");
-	ft_putchar('\n');
-	ft_putnbr_base(-2147483648, "0123456789abcdef");
-	ft_putchar('\n');
 	ft_putnbr_base(40, "0123456789abcdef");
-	ft_putchar('\n');
-//	$expected = "28";
+	printf("\nexpected = 28\n\n");
 	ft_putnbr_base(31, "0123456789abcdef");
-	ft_putchar('\n');
-//	$expected = "1f";
+	printf("\nexpected = 1f\n\n");
 	ft_putnbr_base(15, "01");
-	ft_putchar('\n');
-//	$expected = '1111';
+	printf("\nexpected = 1111\n\n");
 	ft_putnbr_base(-15, "0123456789");
-	ft_putchar('\n');
+	printf("\nexpected = -15\n\n");
 	ft_putnbr_base(-16, "01");
-	ft_putchar('\n');
-//	$expected = '-15-10000';
+	printf("\nexpected = -10000\n\n");
 	ft_putnbr_base(2147483647, "0123456789abcdef");
-	ft_putchar('\n');
+	printf("\nexpected = 7fffffff\n\n");
 	ft_putnbr_base(-2147483648, "0123456789abcdef");
-	ft_putchar('\n');
-//	$expected = '7fffffff-80000000';
+	printf("\nexpected = 80000000\n\n");
 	return(0);
 }
