@@ -27,6 +27,10 @@ void	line(int i, int x, int j, int y)
 	ft_putchar('\n');
 }
 
+void	end_line(int x, int i)
+{
+
+}
 void	middle(int x, int i)
 {
 	while(i <= x)
