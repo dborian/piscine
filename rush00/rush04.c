@@ -1,48 +1,67 @@
-#include <stdio.h>
 void	ft_putchar(char c);
 
-void	rush(int y, int x)
+void	line(int i, int x)
+{
+	while(i <= x)
+	{
+		if(i == 1)
+			ft_putchar('A');
+		else if(i == x)
+			ft_putchar('C');
+		else
+			ft_putchar('B');
+		i++;
+	}
+	ft_putchar('\n');
+}
+
+void	end_line(int i, int x)
+{
+	while(i <= x)
+	{
+		if(i == 1)
+			ft_putchar('C');
+		else if(i == x)
+			ft_putchar('A');
+		else
+			ft_putchar('B');
+		i++;
+	}
+	ft_putchar('\n');
+}
+void	middle(int x, int i)
+{
+	while(i <= x)
+	{
+		if(i == 1 || i == x)
+			ft_putchar('B');
+		else
+			ft_putchar(' ');
+		i++;
+	}
+	ft_putchar('\n');
+}
+
+void	rush(int x, int y)
 {
 	int i;
 	int j;
 
 	i = 1;
-	j=1;
-	printf("x = %d\ny = %d\n", x, y);
-	while(i <= x)
+	j = 0;
+	if(x != 0 && y != 0)
 	{
-		while(j <= y)
+		line(i, x);
+		while(j < y -2)
 		{
-			if(i == 1)
-			{
-				if(j == 1)
-					ft_putchar('A');
-				else if(j == y)
-					ft_putchar('C');
-				else
-					ft_putchar('B');
-			}
-			else if(i == x)
-			{
-				if(j == 1)
-					ft_putchar('C');
-				else if(j == y)
-					ft_putchar('A');
-				else
-					ft_putchar('B');
-			}
-			else
-			{
-				if(j == 1 || j == y)
-					ft_putchar('B');
-				else
-					ft_putchar(' ');
-			}
+			middle(x, i);
 			j++;
-
 		}
-		i++;
-		j = 1;
-		ft_putchar('\n');
+		if(y >= 2)
+		{
+			end_line(i, x);
+		}
 	}
+	else
+		ft_putchar('\n');
 }
