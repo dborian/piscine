@@ -11,20 +11,6 @@ void	line(int i, int x)
 		i++;
 	}
 	ft_putchar('\n');
-	/*if(i == 1 || i == x)
-	  {
-	  if(j == 1 || j == y)
-	  ft_putchar('o');
-	  else
-	  ft_putchar('-');
-	  }
-	  else
-	  {
-	  if(j == 1 || j == y)
-	  ft_putchar('|');
-	  else
-	  ft_putchar(' ');
-	  }*/
 }
 
 void	middle(int x, int i)
@@ -39,6 +25,7 @@ void	middle(int x, int i)
 	}
 	ft_putchar('\n');
 }
+
 void	rush(int x, int y)
 {
 	int i;
