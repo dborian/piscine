@@ -10,11 +10,11 @@ void	ft_puttab(int *tab, int n)
 {
 	int i;
 
-	i = n;
-	while(i >= 0)
+	i = 0;
+	while(i <= n)
 	{
 		ft_putchar(tab[i]+48);
-		i--;
+		i++;
 	}
 	if(tab[0] < 9 - n)
 	{
@@ -23,39 +23,48 @@ void	ft_puttab(int *tab, int n)
 	}
 }
 
+int	ft_valid(int *tab, int n)
+{
+	int i;
+
+	i = n;
+	while(tab[i] == 9 - (n - i))
+	{
+		i--;
+	}
+	return (i);
+}
 void	ft_print_combn(int n)
 {
 	int i;
 	int tab[9];
-	int j;
-
-	n = n-1;
-	j = n;
 	i = 0;
 	while(i < 9)
 	{
 		tab[i] = i;
-		printf("tab[%d] = %d\n", i, tab[i]);
+		printf("tab[%d] = %d\n",i ,tab[i]);
 		i++;
 	}
-	i = 0;
-	while(tab[0] < 9 - n)
+	while(ft_valid(tab, n-1) >= 0)
 	{
-		ft_puttab(tab, n);
-		tab[n]++;
-		if(tab[n] >= 9-(j-n))
+		i = ft_valid(tab, n-1);
+		ft_puttab(tab, n-1);
+		if(i == n-1)
 		{
-			tab[n] = tab[n+1];
-			n--;
+			tab[i]++;
 		}
 		else
-			n = j;
+		{
+			tab[i]++;
+			tab[i+1] = tab[i] + 1;
+		}
 	}
+	ft_puttab(tab, n-1);
 	ft_putchar('\n');
 }
 
 int	main(void)
 {
-	ft_print_combn(3);
+	ft_print_combn(6);
 	return (0);
 }
