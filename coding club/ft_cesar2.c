@@ -38,7 +38,7 @@ int	ft_chartoint(char *str)
 
 int	main(int argc, char *argv[])
 {
-	char m[25] = "IODJ{YHqL_YlgL_YLfl}";
+	char m[250] = "���C�gAAAAABlfJghQF_5HEh7rBOfJ3ejbxvw4h6_v_9Sr9GV5eWe6ziltB5pgZCApkSp6c_krkK3XHoN9fbGZ-tRc7xz4Chi7ixWjRuDfEJ-CHAVJfKJxVrbMfEl1akaKuHHOYDnuZhfezkU�.";
 	printf("str = %s\n", argv[1]);
 	int r = ft_chartoint(argv[1]);
 	printf("r = %d\n", r);
