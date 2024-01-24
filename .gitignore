@@ -1,0 +1,6 @@
+#ignorer fichier lib.a
+*.a
+
+#ignorer les fichier compilé comme a.out
+*.out
+*.o
