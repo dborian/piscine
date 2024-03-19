@@ -18,10 +18,9 @@ char	*ft_strcpy(char *dest, char *src)
 int	main()
 {
 	char dest[] = ""; 
-	char src[] = "kkkkkkkkkkkkkkkkkkkkkk\n";
-	char src1[] = "kkkkkkkkkkkkkn";
+	char src[] = "yep\n";
 	char dest1[] = ""; 
-	printf("%s", ft_strcpy(dest, src));
-	printf("%s", strcpy(dest1, src1));
+	printf("ft_strcpy = %s", ft_strcpy(dest, src));
+	printf("strcpy = %s", strcpy(dest1, src));
 	return(0);
 }
